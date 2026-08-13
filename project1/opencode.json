@@ -1,0 +1,85 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "dmr": {
+      "name": "Docker Model Runner",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "http://host.docker.internal:12434/v1",
+        "apiKey": "local-no-key-required"
+      },
+      "models": {
+        "devstral-small:24B": { 
+		},
+        "qwen3-coder:32k": { 
+          "constraints": {
+            "maxContextTokens": 32768,
+            "maxOutputTokens": 4096
+          }
+        }		
+      }
+    },
+    "runpod-qwen": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "RunPod Qwen3",
+      "options": {
+        "baseURL": "https://api.runpod.ai/v2/qwen3-32b-awq/openai/v1",
+        "apiKey": "{env:RUNPOD_API_KEY}"
+      },
+      "models": {
+        "qwen3-32b": {
+          "id": "Qwen/Qwen3-32B-AWQ",
+          "name": "Qwen3 32B AWQ (RunPod)",
+          "limit": { "context": 32768, "output": 4096 }
+        }
+      }
+    },
+    "runpod-gpt": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "RunPod GPT OSS 120B",
+      "options": {
+        "baseURL": "https://api.runpod.ai/v2/gpt-oss-120b/openai/v1",
+        "apiKey": "{env:RUNPOD_API_KEY}"
+      },
+      "models": {
+        "gpt-oss-120b": {
+          "id": "openai/gpt-oss-120b",
+          "name": "GPT OSS 120B (RunPod)",
+          "limit": { "context": 131072, "output": 4096 }
+        }
+      }
+    },
+    "runpod-serverless": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "RunPod Serverless vLLM",
+      "options": {
+        "baseURL": "https://api.runpod.ai/v2/2f575dx382hwuh/openai/v1",
+        "apiKey": "{env:RUNPOD_API_KEY}"
+      },
+      "models": {
+        "qwen-35-35b": {
+          "id": "Qwen/Qwen3.5-35B-A3B-FP8",
+          "name": "Qwen3.5 (Serverless RunPod)",
+          "limit": { "context": 16384, "output": 4096 }
+        }
+      }
+    },
+    "runpod-pod": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "RunPod Pod vLLM",
+      "options": {
+        "baseURL": "https://f5adi1kwi0zkos-8000.proxy.runpod.net/v1",
+        "apiKey": "{env:RUNPOD_VLLM_API_KEY}"
+      },
+      "models": {
+        "qwen-3.5-35b": {
+          "id": "Qwen/Qwen3.5-35B-A3B-FP8",
+          "name": "Qwen3.5 (Pod on RunPod)",
+          "limit": { "context": 16384, "output": 4096 }
+        }
+      }
+    }
+  }
+}
+
+
