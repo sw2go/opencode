@@ -1,4 +1,5 @@
 {
+  "plugin": ["opencode-parser"],
   "$schema": "https://opencode.ai/config.json",
   "provider": {
     "dmr": {
@@ -19,6 +20,20 @@
         }		
       }
     },
+	"local-llama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "local llama qwen",
+      "options": {
+        "baseURL": "http://host.docker.internal:8080/v1"
+      },
+      "models": {
+        "qwen3.8-27B": {
+          "id": "qwen27b",
+          "name": "Qwen3.8 27B (Local)"
+        }
+      }
+    },
+
     "runpod-qwen": {
       "npm": "@ai-sdk/openai-compatible",
       "name": "RunPod Qwen3",
@@ -53,7 +68,7 @@
       "npm": "@ai-sdk/openai-compatible",
       "name": "RunPod Serverless vLLM",
       "options": {
-        "baseURL": "https://api.runpod.ai/v2/2f575dx382hwuh/openai/v1",
+        "baseURL": "https://api.runpod.ai/v2/{env:RUNPOD_ID}/openai/v1",
         "apiKey": "{env:RUNPOD_API_KEY}"
       },
       "models": {
@@ -64,18 +79,22 @@
         }
       }
     },
-    "runpod-pod": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "RunPod Pod vLLM",
+    "runpod-pod": {                                                    // name
+      "npm": "@ai-sdk/openai-compatible",                              // 
+      "name": "RunPod Pod",
       "options": {
-        "baseURL": "https://f5adi1kwi0zkos-8000.proxy.runpod.net/v1",
-        "apiKey": "{env:RUNPOD_VLLM_API_KEY}"
+        "baseURL": "https://{env:RUNPOD_ID}-8000.proxy.runpod.net/v1", // pod-id
+        "apiKey": "{env:RUNPOD_POD_API_KEY}"
       },
       "models": {
-        "qwen-3.5-35b": {
-          "id": "Qwen/Qwen3.5-35B-A3B-FP8",
-          "name": "Qwen3.5 (Pod on RunPod)",
+        "qwen-3.5-35b": {                                              // model
+          "id": "Qwen/Qwen3.5-35B-A3B-FP8",                            // see vLLM container start command  
+          "name": "Qwen3.5 vLLM",
           "limit": { "context": 16384, "output": 4096 }
+        },
+		"Qwen3.8-27B-UD-Q4_K_XL": {                                    // model
+          "id": "Qwen3.8-27B-UD-Q4_K_XL",                              // see llama.cpp container environment variable LLAMA_ARG_ALIAS
+          "name": "Qwen3.8 llama.cpp"
         }
       }
     }
