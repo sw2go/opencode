@@ -1,2 +1,0 @@
-clone this repo to your local computer
-git clone 
