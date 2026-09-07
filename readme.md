@@ -1,6 +1,9 @@
 # Opencode Usage
+Use this guide to setup and run OpenCode with your favorite AI privately and securely. 
+To prevent OpenCode from accessing all files on your computer we don't install OpenCode on the computer.
+Instead we run it from within docker and mount only the current folder as the working directory.
 
-- Prerequisits: RunPod.io Account, [My opencode setup](setup-opencode.md)
+- Prerequisits: RunPod.io Account, [My OpenCode setup](setup-opencode.md)
 
 - Go to https://RunPod.io and deploy a pod from one of your templates
 
