@@ -1,6 +1,9 @@
 {
   "plugin": ["opencode-parser"],
   "$schema": "https://opencode.ai/config.json",
+  "permission": {
+	  "read": { "**/bin/**": "deny" }
+  },
   "provider": {
     "dmr": {
       "name": "Docker Model Runner",
@@ -89,12 +92,12 @@
       "models": {
         "qwen-3.5-35b": {                                              // model
           "id": "Qwen/Qwen3.5-35B-A3B-FP8",                            // see vLLM container start command  
-          "name": "Qwen3.5 vLLM",
+          "name": "Qwen3.5-35B-A3B-FP8 vLLM",
           "limit": { "context": 16384, "output": 4096 }
         },
 		"Qwen3.8-27B-UD-Q4_K_XL": {                                    // model
           "id": "Qwen3.8-27B-UD-Q4_K_XL",                              // see llama.cpp container environment variable LLAMA_ARG_ALIAS
-          "name": "Qwen3.8 llama.cpp"
+          "name": "Qwen3.8-27B-UD-Q4_K_XL llama.cpp"
         }
       }
     }

@@ -58,7 +58,7 @@ docker run -it --rm ^
   -v "%OPENCODE_COMMONPATH%\config\tools:/root/.config/opencode/tools:ro" ^
   ghcr.io/anomalyco/opencode ^
   %*
-  
+
 goto FINALEND  
 :QUIT
 pause
