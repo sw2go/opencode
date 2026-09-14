@@ -10,9 +10,14 @@
 - Check that the secret MY_PODS_API_KEY is defined
 - Pods Deploy a Pod > Search a template "llama.cpp" based on Docker Image: ghcr.io/ggml-org/llama.cpp:server-cuda
 - Select Template: Qwen3.8-27B-UD-Q4_K_XL (24GB VRAM, 192k context, OpenAI API, llama.cpp) Qwen 3.8
-- Add additional Environment Variables:
-  ```LLAMA_ARG_ALIAS=Qwen3.8-27B-UD-Q4_K_XL```               ... Model-Name from URL, this is just my convention (for lookup by OpenCode)
-  ```LLAMA_API_KEY={{ RUNPOD_SECRET_MY_PODS_API_KEY }}```    ... Set API-Key to protect the Pod's API
+- Add additional Environment Variables
+    ```
+	LLAMA_ARG_ALIAS=Qwen3.8-27B-UD-Q4_K_XL               
+    LLAMA_API_KEY={{ RUNPOD_SECRET_MY_PODS_API_KEY }}
+	```  
+	The Alias is the Model-Name from the URL, this is just my convention (for lookup by OpenCode).
+    The ApiKey is ot protect llama.cpp 
+	
 - Select GPU RTX 3090 or similar and "Deploy Pod"
 - Wait until Container-Log shows  "llama_server: listening on ..." 
 - Copy the ID of the Pod                               ... you will need this value with OpenCode
