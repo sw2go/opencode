@@ -1,7 +1,23 @@
-# Setup RunPod Template
+# Setup RunPod
 
+## Prerequisits
+- Create a Account at RunPod.io
+- Add some Credits
+- Go to Secrets and add MY_PODS_API_KEY                ... later you will need this value with opencode
 
+## Start a Pod
+- Login to RunPod.io
+- Check that the secret MY_PODS_API_KEY is defined
+- Pods Deploy a Pod > Search a template "llama.cpp" based on Docker Image: ghcr.io/ggml-org/llama.cpp:server-cuda
+  Select Template: Qwen3.8-27B-UD-Q4_K_XL (24GB VRAM, 192k context, OpenAI API, llama.cpp) Qwen 3.8
+- Add Environment Variables:
+  LLAMA_ARG_ALIAS=Qwen3.8-27B-UD-Q4_K_XL               ... Model-Name from URL, this is just my convention (for OpenCode)
+  LLAMA_API_KEY={{ RUNPOD_SECRET_MY_PODS_API_KEY }}    ... Set API-Key to protect the Pod's API
+- Select GPU RTX 3090 or similar and "Deploy Pod"
+- Wait until Container-Log shows  "llama_server: listening on ..." 
+- Copy the ID of the Pod
 
+# Setup your own RunPod template
 Template name ```AAC-llama.cpp-server-cuda-Qwen3.8-27B-UD-Q4_K_XL```
 
 Template type ```Pods```
@@ -9,8 +25,8 @@ Template type ```Pods```
 Compute type  ```NVIDIA GPU```
 
 Container image
-Tagged ```ghcr.io/ggml-org/llama.cpp:server-cuda```
-Pinned ```ghcr.io/ggml-org/llama.cpp@sha256:0d9738b203c12d96c1157b76482d5c7afa95fd28b2031b0bff912bd457791819```
+- Tagged ```ghcr.io/ggml-org/llama.cpp:server-cuda```
+- Pinned ```ghcr.io/ggml-org/llama.cpp@sha256:0d9738b203c12d96c1157b76482d5c7afa95fd28b2031b0bff912bd457791819```
 
 To find the version to pin:
 - go to https://github.com/ggml-org/llama.cpp/pkgs/container/llama.cpp/versions?filters%5Bversion_type%5D=tagged
