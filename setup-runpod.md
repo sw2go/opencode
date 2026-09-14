@@ -1,9 +1,8 @@
-# Setup Template
+# Setup RunPod Template
 
-Template name
-```
-AAC-llama.cpp-server-cuda-Qwen3.8-27B-UD-Q4_K_XL
-```
+
+
+Template name ```AAC-llama.cpp-server-cuda-Qwen3.8-27B-UD-Q4_K_XL```
 
 Template type
 Pods
@@ -38,6 +37,7 @@ Networking configuration
 Label 8000 Number 8000
 
 Environment variables:
+```
 LLAMA_ARG_HOST 0.0.0.0
 LLAMA_ARG_N_GPU_LAYERS 999
 MODEL_URL https://huggingface.co/unsloth/Qwen3.8-27B-GGUF/resolve/main/Qwen3.8-27B-UD-Q4_K_XL.gguf
@@ -51,3 +51,4 @@ MODEL_FILE Qwen3.8-27B-UD-Q4_K_XL.gguf
 LLAMA_ARG_CACHE_TYPE_V q8_0
 LLAMA_ARG_ALIAS Qwen3.8-27B-UD-Q4_K_XL
 LLAMA_API_KEY {{ RUNPOD_SECRET_MY_PODS_API_KEY }}
+```
