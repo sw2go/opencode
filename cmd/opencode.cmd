@@ -47,6 +47,20 @@ for %%I in ("%~dp0.") do echo %%~fI
 goto QUIT
 )
 
+call :CheckArgs %*
+
+if defined IS_RUNPOD_MODEL (
+echo RunPod model detected
+if not defined RUNPOD_ID (
+echo ERROR: RUNPOD_ID is not defined.
+goto QUIT
+)
+echo Using RUNPOD_ID=%RUNPOD_ID%
+)
+
+
+
+
 docker run -it --rm ^
   -e RUNPOD_ID=%RUNPOD_ID% ^
   -e RUNPOD_POD_API_KEY=%RUNPOD_POD_API_KEY% ^
@@ -59,8 +73,23 @@ docker run -it --rm ^
   ghcr.io/anomalyco/opencode ^
   %*
 
-goto FINALEND  
+goto :eof
+
+REM Subroutines
+---------------
+:CheckArgs
+if "%~1"=="" goto :eof
+if /I "%~1"=="--model" (
+    echo.%~2 | findstr /I /B /C:"runpod-pod/" >nul
+	if not errorlevel 1 set "IS_RUNPOD_MODEL=1"
+)
+shift
+goto CheckArgs
+
+
+
+
+
 :QUIT
 pause
-:FINALEND
 

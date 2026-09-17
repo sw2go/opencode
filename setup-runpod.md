@@ -16,7 +16,7 @@
     LLAMA_API_KEY={{ RUNPOD_SECRET_MY_PODS_API_KEY }}
 	```  
 	The Alias is the Model-Name from the URL, this is just my convention (for lookup by OpenCode).
-    The ApiKey is ot protect llama.cpp 
+    The ApiKey is to protect llama.cpp 
 	
 - Select GPU RTX 3090 or similar and "Deploy Pod"
 - Wait until Container-Log shows  "llama_server: listening on ..." 

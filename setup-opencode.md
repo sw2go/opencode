@@ -13,3 +13,6 @@
     ```
   After a few seconds you should see the opencode UI. 
   At the very first startup it may take longer since the docker-image has to be downloaded once.
+  
+# New models
+- If you want to use new models add them to ./config/opencode.jsonc  [./config/opencode.jsonc](./config/opencode.jsonc) in this repo.
