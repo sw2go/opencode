@@ -3,8 +3,8 @@
 ## Prerequisits
 - Create a Account at RunPod.io
 - Add some Credits
-- Go to Secrets and add a variable MY_PODS_API_KEY with a secret value
-    The secret value you will need later when using opencode with a pod
+- Go to Secrets and add a variable MY_PODS_API_KEY with a secret value. 
+  The secret value you will need later when using opencode with a pod.
 
 ## Start a Pod
 - Login to RunPod.io

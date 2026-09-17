@@ -62,6 +62,8 @@ echo Using RUNPOD_ID=%RUNPOD_ID%
 
 
 docker run -it --rm ^
+  --security-opt=no-new-privileges:true ^
+  --cap-drop ALL ^
   -e RUNPOD_ID=%RUNPOD_ID% ^
   -e RUNPOD_POD_API_KEY=%RUNPOD_POD_API_KEY% ^
   -v "%OPENCODE_WORKSPACE%:/workspace" ^
