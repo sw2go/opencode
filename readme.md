@@ -16,3 +16,10 @@ Instead we run it from within docker and mount only the current folder as the wo
     set RUNPOD_POD_API_KEY=yyyyyy                        ... see in RunPod.io Secrets the MY_PODS_API_KEY 
     opencode --model runpod-pod/Qwen3.8-27B-UD-Q4_K_XL
     ```
+
+- Continue Session
+    ```
+    opencode opencode -s ses_f3802d016ffeDDdyW07OZoUDjX
+    ```
+    Old sessions you can find also in [./share/log/opencode.log](./share/log/opencode.log)
+

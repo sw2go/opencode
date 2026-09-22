@@ -8,6 +8,12 @@ REM \config\agents and other folders , it is expected to be a sibling of the fol
 REM 
 REM the subfolder \cmd (that contains this batch-script) is expected to be a sibling of \config and \share
 
+REM Docker-Image File versions, add new version to the end, latest is the active one
+set OPENCODE_IMAGEFILE=ghcr.io/anomalyco/opencode
+set OPENCODE_IMAGEFILE=ghcr.io/anomalyco/opencode@sha256:05469d6677f41be0255fe660fddcf2c19040ef6789083c0b48094938c4d1ed9d
+set OPENCODE_IMAGEFILE=ghcr.io/anomalyco/opencode@sha256:0d3c9551ea2522fcfd23fbc2e302fc87218d6c198bff277e8ab44d93a3bd6d3d
+
+REM -----------------------------------------------
 set "CONFIGFILE=opencode.jsonc"
 set "OPENCODE_WORKSPACE=%cd%"
 
@@ -72,7 +78,7 @@ docker run -it --rm ^
   -v "%OPENCODE_COMMONPATH%\config\%CONFIGFILE%:/root/.config/opencode/%CONFIGFILE%:ro" ^
   -v "%OPENCODE_COMMONPATH%\config\agents:/root/.config/opencode/agents:ro" ^
   -v "%OPENCODE_COMMONPATH%\config\tools:/root/.config/opencode/tools:ro" ^
-  ghcr.io/anomalyco/opencode ^
+  %OPENCODE_IMAGEFILE% ^
   %*
 
 goto :eof
