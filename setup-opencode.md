@@ -15,7 +15,7 @@
   At the very first startup it may take longer since the docker-image has to be downloaded once.
   
 # New models
-- If you want to use new models add them to [./config/opencode.jsonc](./config/opencode.jsonc) in this repo.
+- If you want to use new models add them to [./config/opencode.jsonc](./config/opencode.jsonc) within this repo.
 
 # Update OpenCode
 - To use the newest version of OpenCode 
@@ -28,3 +28,4 @@
     ```
 	Like this your opencode setup is pinned to that exact version. 
 	If needed you can rollback to a older version by just setting the old sha256 value.
+	
