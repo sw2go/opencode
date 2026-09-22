@@ -21,7 +21,7 @@ Instead we run it from within docker and mount only the current folder as the wo
 - Continue Session
     ```
     opencode opencode -s ses_f3802d016ffeDDdyW07OZoUDjX
-    ```
-    Old sessions id's you find in ./share/log/opencode.log. The log is written to the local share folder that is mounted by docker, to persist opencode data outside the docker container. 
+    ```    
+	You can find old session IDs in ./share/log/opencode.log. The log is written to the local Share folder, which Docker mounts to persist OpenCode shared data on the host.
 
 
