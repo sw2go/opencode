@@ -12,6 +12,7 @@ Instead we run it from within docker and mount only the current folder as the wo
 - Start Console
     ```
     cd into your-projects-folder
+	preset                                               ... or set environment variables manually
 	set OPENCODE_IMAGEFILE=your-image                    ... only if you want to use an image other than the default image, e.g. opencode-dotnet10sdk
     set RUNPOD_ID=xxxxxx                                 ... see in RunPod.io the running Pod's Id 
     set RUNPOD_POD_API_KEY=yyyyyy                        ... see in RunPod.io Secrets the MY_PODS_API_KEY 
