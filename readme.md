@@ -29,5 +29,5 @@ Instead we run it from within docker and mount only the current folder as the wo
 
     [./workspaces/docs](./workspaces/docs) to read, analyze and write documents like PDF, XLSX, DOCX
 	
-	[./workspaces/dotnet-razor](./workspaces/dotnet-razor) to read, analyze and write documents like PDF, XLSX, DOCX 
+	[./workspaces/dotnet-razor](./workspaces/dotnet-razor) to develop .NET Razor webapps
   
