@@ -2,3 +2,10 @@
 
 /share
 /other-stuff
+
+# Ignore workspace contents
+/workspaces/*/**
+# Keep workspace-folder only and the agent files in it
+!/workspaces/*/
+!/workspaces/*/AGENTS.md
+!/workspaces/*/preset.cmd

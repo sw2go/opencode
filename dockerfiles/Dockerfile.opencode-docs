@@ -1,0 +1,15 @@
+FROM ghcr.io/anomalyco/opencode
+
+RUN apk add --no-cache \
+    python3 \
+    py3-pip
+	
+# For simplicity's sake, we use --break-system-packages, since there is no Python on the OpenCode image
+RUN pip install --break-system-packages \
+    pymupdf \
+    mammoth \
+    python-docx \
+    openpyxl \
+    pandas
+
+ENTRYPOINT ["opencode"]
