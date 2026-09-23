@@ -25,4 +25,7 @@ Instead we run it from within docker and mount only the current folder as the wo
     ```    
 	You can find old session IDs in ./share/log/opencode.log. The log is written to the local Share folder, which Docker mounts to persist OpenCode shared data on the host.
 
-
+- Sample workspaces
+    [./workspaces/docs](./workspaces/docs) to read, analyze and write documents like PDF, XLSX, DOCX 
+	[./workspaces/dotnet-razor](./workspaces/dotnet-razor) to read, analyze and write documents like PDF, XLSX, DOCX 
+  
